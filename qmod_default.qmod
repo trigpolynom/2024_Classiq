@@ -1,0 +1,454 @@
+{
+  "source_ref": null,
+  "version": "0.65.1",
+  "kind": "user",
+  "functions": [
+    {
+      "source_ref": null,
+      "name": "allocate_num",
+      "positional_arg_declarations": [
+        {
+          "source_ref": null,
+          "name": "num_qubits",
+          "kind": "ClassicalParameterDeclaration",
+          "classical_type": {
+            "source_ref": null,
+            "kind": "int"
+          }
+        },
+        {
+          "source_ref": null,
+          "name": "is_signed",
+          "kind": "ClassicalParameterDeclaration",
+          "classical_type": {
+            "source_ref": null,
+            "kind": "bool"
+          }
+        },
+        {
+          "source_ref": null,
+          "name": "fraction_digits",
+          "kind": "ClassicalParameterDeclaration",
+          "classical_type": {
+            "source_ref": null,
+            "kind": "int"
+          }
+        },
+        {
+          "source_ref": null,
+          "name": "out",
+          "quantum_type": {
+            "source_ref": null,
+            "kind": "qnum",
+            "size": {
+              "source_ref": null,
+              "expr": "num_qubits"
+            },
+            "is_signed": {
+              "source_ref": null,
+              "expr": "is_signed"
+            },
+            "fraction_digits": {
+              "source_ref": null,
+              "expr": "fraction_digits"
+            }
+          },
+          "direction": "output",
+          "kind": "PortDeclaration"
+        }
+      ],
+      "body": [
+        {
+          "source_ref": {
+            "start_line": 47,
+            "start_column": 3,
+            "end_line": 47,
+            "end_column": 28,
+            "file_name": "C:\\Users\\nonpl\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\classiq\\open_library\\functions\\state_preparation.py"
+          },
+          "kind": "Allocate",
+          "uuid": "e16c8163-3000-4264-bf15-a346a324aada",
+          "size": {
+            "source_ref": null,
+            "expr": "num_qubits"
+          },
+          "target": {
+            "source_ref": null,
+            "name": "out"
+          }
+        }
+      ]
+    },
+    {
+      "source_ref": null,
+      "name": "apply_to_all",
+      "positional_arg_declarations": [
+        {
+          "source_ref": null,
+          "name": "gate_operand",
+          "positional_arg_declarations": [
+            {
+              "source_ref": null,
+              "name": "target",
+              "quantum_type": {
+                "source_ref": null,
+                "kind": "qbit"
+              },
+              "direction": "inout",
+              "kind": "PortDeclaration"
+            }
+          ],
+          "kind": "QuantumOperandDeclaration",
+          "is_list": false
+        },
+        {
+          "source_ref": null,
+          "name": "target",
+          "quantum_type": {
+            "source_ref": null,
+            "element_type": {
+              "source_ref": null,
+              "kind": "qbit"
+            },
+            "kind": "qvec",
+            "length": null
+          },
+          "direction": "inout",
+          "kind": "PortDeclaration"
+        }
+      ],
+      "body": [
+        {
+          "source_ref": {
+            "start_line": 26,
+            "start_column": 3,
+            "end_line": 26,
+            "end_column": 64,
+            "file_name": "C:\\Users\\nonpl\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\classiq\\open_library\\functions\\utility_functions.py"
+          },
+          "kind": "Repeat",
+          "uuid": "9be9509e-968b-4aee-9b12-fb611ccb2b15",
+          "iter_var": "index",
+          "count": {
+            "source_ref": null,
+            "expr": "get_field(target, 'len')"
+          },
+          "body": [
+            {
+              "source_ref": {
+                "start_line": 26,
+                "start_column": 36,
+                "end_line": 26,
+                "end_column": 63,
+                "file_name": "C:\\Users\\nonpl\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\classiq\\open_library\\functions\\utility_functions.py"
+              },
+              "kind": "QuantumFunctionCall",
+              "uuid": "e6fdde0a-c1eb-4c9f-a575-11309640b8e9",
+              "function": "gate_operand",
+              "positional_args": [
+                {
+                  "source_ref": null,
+                  "name": "target",
+                  "base_handle": {
+                    "source_ref": null,
+                    "name": "target"
+                  },
+                  "index": {
+                    "source_ref": null,
+                    "expr": "index"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_ref": null,
+      "name": "hadamard_transform",
+      "positional_arg_declarations": [
+        {
+          "source_ref": null,
+          "name": "target",
+          "quantum_type": {
+            "source_ref": null,
+            "element_type": {
+              "source_ref": null,
+              "kind": "qbit"
+            },
+            "kind": "qvec",
+            "length": null
+          },
+          "direction": "inout",
+          "kind": "PortDeclaration"
+        }
+      ],
+      "body": [
+        {
+          "source_ref": {
+            "start_line": 46,
+            "start_column": 3,
+            "end_line": 46,
+            "end_column": 26,
+            "file_name": "C:\\Users\\nonpl\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\classiq\\open_library\\functions\\utility_functions.py"
+          },
+          "kind": "QuantumFunctionCall",
+          "uuid": "97dba741-444b-4512-8bcd-07ba0074fb9c",
+          "function": "apply_to_all",
+          "positional_args": [
+            "H",
+            {
+              "source_ref": null,
+              "name": "target"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_ref": null,
+      "name": "compute_tanh",
+      "positional_arg_declarations": [
+        {
+          "source_ref": null,
+          "name": "precision",
+          "kind": "ClassicalParameterDeclaration",
+          "classical_type": {
+            "source_ref": null,
+            "kind": "int"
+          }
+        },
+        {
+          "source_ref": null,
+          "name": "x",
+          "quantum_type": {
+            "source_ref": null,
+            "kind": "qnum",
+            "size": null,
+            "is_signed": null,
+            "fraction_digits": null
+          },
+          "direction": "inout",
+          "kind": "PortDeclaration"
+        },
+        {
+          "source_ref": null,
+          "name": "tanh_x",
+          "quantum_type": {
+            "source_ref": null,
+            "kind": "qnum",
+            "size": null,
+            "is_signed": null,
+            "fraction_digits": null
+          },
+          "direction": "output",
+          "kind": "PortDeclaration"
+        }
+      ],
+      "body": [
+        {
+          "source_ref": {
+            "start_line": 7,
+            "start_column": 3,
+            "end_line": 7,
+            "end_column": 39,
+            "file_name": "C:\\Users\\nonpl\\AppData\\Local\\Temp\\ipykernel_16248\\3870588012.py"
+          },
+          "kind": "ArithmeticOperation",
+          "uuid": "0da9604f-1527-44d7-aee8-d8a35fb8d4b8",
+          "expression": {
+            "source_ref": null,
+            "expr": "0.462117 + 0.786448 * (x - 0.5)"
+          },
+          "result_var": {
+            "source_ref": null,
+            "name": "tanh_x"
+          },
+          "operation_kind": "assignment"
+        }
+      ]
+    },
+    {
+      "source_ref": null,
+      "name": "main",
+      "positional_arg_declarations": [
+        {
+          "source_ref": null,
+          "name": "x",
+          "quantum_type": {
+            "source_ref": null,
+            "kind": "qnum",
+            "size": null,
+            "is_signed": null,
+            "fraction_digits": null
+          },
+          "direction": "output",
+          "kind": "PortDeclaration"
+        },
+        {
+          "source_ref": null,
+          "name": "y",
+          "quantum_type": {
+            "source_ref": null,
+            "kind": "qnum",
+            "size": null,
+            "is_signed": null,
+            "fraction_digits": null
+          },
+          "direction": "output",
+          "kind": "PortDeclaration"
+        }
+      ],
+      "body": [
+        {
+          "source_ref": {
+            "start_line": 6,
+            "start_column": 3,
+            "end_line": 9,
+            "end_column": 21,
+            "file_name": "C:\\Users\\nonpl\\AppData\\Local\\Temp\\ipykernel_16248\\1160177781.py"
+          },
+          "kind": "QuantumFunctionCall",
+          "uuid": "61f2edad-739d-4dde-a41b-0e32a9865716",
+          "function": "allocate_num",
+          "positional_args": [
+            {
+              "source_ref": null,
+              "expr": "4"
+            },
+            {
+              "source_ref": null,
+              "expr": "False"
+            },
+            {
+              "source_ref": null,
+              "expr": "4"
+            },
+            {
+              "source_ref": null,
+              "name": "x"
+            }
+          ]
+        },
+        {
+          "source_ref": {
+            "start_line": 12,
+            "start_column": 3,
+            "end_line": 12,
+            "end_column": 24,
+            "file_name": "C:\\Users\\nonpl\\AppData\\Local\\Temp\\ipykernel_16248\\1160177781.py"
+          },
+          "kind": "QuantumFunctionCall",
+          "uuid": "a76e1b23-cbb2-438e-9472-e2ed179c3ede",
+          "function": "hadamard_transform",
+          "positional_args": [
+            {
+              "source_ref": null,
+              "name": "x"
+            }
+          ]
+        },
+        {
+          "source_ref": {
+            "start_line": 15,
+            "start_column": 3,
+            "end_line": 15,
+            "end_column": 30,
+            "file_name": "C:\\Users\\nonpl\\AppData\\Local\\Temp\\ipykernel_16248\\1160177781.py"
+          },
+          "kind": "QuantumFunctionCall",
+          "uuid": "94af212b-6937-4650-870e-b45baa2aef93",
+          "function": "compute_tanh",
+          "positional_args": [
+            {
+              "source_ref": null,
+              "expr": "4"
+            },
+            {
+              "source_ref": null,
+              "name": "x"
+            },
+            {
+              "source_ref": null,
+              "name": "y"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "enums": [],
+  "types": [],
+  "qstructs": [],
+  "classical_execution_code": "",
+  "constants": [],
+  "constraints": {
+    "max_width": null,
+    "max_depth": null,
+    "max_gate_count": {},
+    "optimization_parameter": "no_opt"
+  },
+  "execution_preferences": {
+    "noise_properties": null,
+    "random_seed": 3476710502,
+    "backend_preferences": {
+      "backend_service_provider": "Classiq",
+      "backend_name": "simulator"
+    },
+    "num_shots": null,
+    "transpile_to_hardware": "decompose",
+    "job_name": null
+  },
+  "preferences": {
+    "machine_precision": 8,
+    "backend_service_provider": null,
+    "backend_name": null,
+    "custom_hardware_settings": {
+      "basis_gates": [
+        "cy",
+        "cz",
+        "tdg",
+        "u2",
+        "ry",
+        "rz",
+        "t",
+        "z",
+        "s",
+        "id",
+        "h",
+        "x",
+        "y",
+        "u1",
+        "u",
+        "cx",
+        "r",
+        "rx",
+        "sx",
+        "sdg",
+        "p",
+        "sxdg"
+      ],
+      "connectivity_map": null,
+      "is_symmetric_connectivity": true
+    },
+    "debug_mode": true,
+    "synthesize_all_separately": false,
+    "optimization_level": 3,
+    "output_format": [
+      "qasm"
+    ],
+    "pretty_qasm": true,
+    "qasm3": null,
+    "transpilation_option": "auto optimize",
+    "solovay_kitaev_max_iterations": null,
+    "timeout_seconds": 300,
+    "optimization_timeout_seconds": null,
+    "random_seed": 1737107885
+  },
+  "debug_info": {
+    "data": {},
+    "blackbox_data": {}
+  },
+  "functions_compilation_metadata": {}
+}
